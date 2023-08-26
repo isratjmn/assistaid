@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutImage from "../../../public/about/about-img.jpg"
+import aboutImage from "../../../public/about/about-img.jpg";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 const HomeBanner = () => {
