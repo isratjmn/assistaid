@@ -10,7 +10,7 @@ const createJWT = async (payload) => {
 		const data = await res.json();
 		return data;
 	} catch (error) {
-		error.message;
+		console.log(error.message);
 	}
 };
 

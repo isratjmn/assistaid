@@ -77,7 +77,7 @@ const Volunteers = () => {
 									required
 								/>
 								<label
-									htmlFor="name"
+									for="name"
 									className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300  -translate-y-6  top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-400 peer-focus:dark:text-green-400  peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
 								></label>
 							</div>
@@ -91,7 +91,7 @@ const Volunteers = () => {
 									required
 								/>
 								<label
-									htmlFor="email"
+									for="email"
 									className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300  -translate-y-6 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-400 peer-focus:dark:text-green-400  peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
 								></label>
 							</div>
@@ -105,7 +105,7 @@ const Volunteers = () => {
 									required
 								/>
 								<label
-									htmlFor="imageURL"
+									for="imageURL"
 									className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300  -translate-y-6 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-400 peer-focus:dark:text-green-400  peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
 								></label>
 							</div>
@@ -121,7 +121,7 @@ const Volunteers = () => {
 										readOnly
 									/>
 									<label
-										htmlFor="designation"
+										for="designation"
 										className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300  -translate-y-6 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-400 peer-focus:dark:text-green-400  peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
 									></label>
 								</div>
@@ -135,7 +135,7 @@ const Volunteers = () => {
 										required
 									/>
 									<label
-										htmlFor="bloodGroup"
+										for="bloodGroup"
 										className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300  -translate-y-6 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-400 peer-focus:dark:text-green-400  peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
 									></label>
 								</div>
@@ -151,7 +151,7 @@ const Volunteers = () => {
 									required
 								/>
 								<label
-									htmlhtmlFor="phoneNumber"
+									for="phoneNumber"
 									className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300  -translate-y-6 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-400 peer-focus:dark:text-green-400  peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
 								></label>
 							</div>
@@ -165,7 +165,7 @@ const Volunteers = () => {
 									required
 								/>
 								<label
-									htmlFor="workPlace"
+									for="workPlace"
 									className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300  -translate-y-6 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-400 peer-focus:dark:text-green-400  peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
 								></label>
 							</div>

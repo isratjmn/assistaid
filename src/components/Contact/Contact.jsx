@@ -29,7 +29,7 @@ const Contact = () => {
 					e.target.reset();
 				},
 				(error) => {
-					error.text;
+					console.log(error.text);
 				}
 			);
 	};
