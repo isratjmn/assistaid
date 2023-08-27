@@ -1,4 +1,3 @@
-import { RiseLoader } from "react-spinners";
 
 const Spinner = () => {
 	return (
