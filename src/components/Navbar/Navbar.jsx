@@ -6,11 +6,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import useAuth from "@/hooks/useAuth";
 import { useTheme } from "next-themes";
-import Spinner from "../Spinner";
 import "./Navbar.css";
 
 const Navbar = () => {
-	const router = useRouter();
+	// const router = useRouter();
 	const { user, logout } = useAuth();
 	const { displayName, photoURL } = user || {};
 	const [activeLink, setActiveLink] = useState(null);
