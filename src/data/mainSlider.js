@@ -2,7 +2,7 @@ const mainSlider = [
     {
       id: 1,
       bg: "/Slider1.jpg",
-      title: "Help them to protect their Families \n AidNAssist !",
+      title: "Help them to protect their Families \n AidNAssist!",
     },
     {
       id: 2,

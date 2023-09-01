@@ -1,0 +1,77 @@
+[
+	{
+		"name": "John Doe",
+		"email": "admin@example.com",
+		"role": "admin"
+	},
+	{
+		"name": "Jane Smith",
+		"email": "donor@example.com",
+		"role": "donor"
+	},
+	{
+		"name": "Alice Johnson",
+		"email": "user@example.com",
+		"role": "admin"
+	},
+	{
+		"name": "Michael Brown",
+		"email": "user1@example.com",
+		"role": "user"
+	},
+	{
+		"name": "Emily Wilson",
+		"email": "user2@example.com",
+		"role": "admin"
+	},
+	{
+		"name": "David Lee",
+		"email": "user3@example.com",
+		"role": "user"
+	},
+	{
+		"name": "Olivia Davis",
+		"email": "user4@example.com",
+		"role": "admin"
+	},
+	{
+		"name": "James Miller",
+		"email": "user5@example.com",
+		"role": "user"
+	},
+	{
+		"name": "Sophia Taylor",
+		"email": "user6@example.com",
+		"role": "admin"
+	},
+	{
+		"name": "Daniel Martinez",
+		"email": "user7@example.com",
+		"role": "user"
+	},
+	{
+		"name": "Isabella Anderson",
+		"email": "user8@example.com",
+		"role": "donor"
+	},
+	{
+		"name": "Liam Clark",
+		"email": "user9@example.com",
+		"role": "user"
+	},
+	{
+		"name": "Mia White",
+		"email": "user10@example.com",
+		"role": "donor"
+	},
+	{
+		"name": "Ethan Harris",
+		"email": "user11@example.com",
+		"role": "user"
+	},
+	{
+		"name": "Ava Martin",
+		"email": "user12@example.com",
+		"role": "donor"
+	}
+]

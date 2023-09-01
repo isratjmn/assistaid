@@ -6,7 +6,6 @@ import { NextResponse } from "next/server";
 export async function GET() {
 	await mongoose.connect(connectionSrt);
 	const data = await Feedbacks.find();
-	// console.log(data);
 	return NextResponse.json({ result: data, success: true });
 }
 

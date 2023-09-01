@@ -58,6 +58,14 @@ const SignupForm = () => {
 				displayName: name,
 				photoURL: photo,
 			});
+			let result = await fetch("/api/users", {
+				method: "POST",
+				body: JSON.stringify(data),
+			});
+			result = await result.json();
+			if (result.success) {
+				toast.success("Successfully Added!");
+			}
 			startTransition(() => {
 				refresh();
 				replace(from);
@@ -74,7 +82,10 @@ const SignupForm = () => {
 		<section>
 			<h1 className="text-4xl font-bold pt-16">Register now!</h1>
 			<p className="pt-4 pb-3">Register now to connect with us.</p>
-			<form onSubmit={handleSubmit(onSubmit)} className="signup-form border-2">
+			<form
+				onSubmit={handleSubmit(onSubmit)}
+				className="signup-form border-2"
+			>
 				<div className="form-control">
 					<label htmlFor="name" className="label label-text">
 						Name

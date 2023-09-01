@@ -1,0 +1,7 @@
+{
+	"welcome": "¡Bienvenido a nuestro sitio web!",
+	"about": "Sobre nosotros",
+	"contact": "Contáctenos",
+	"greeting": "¡Hola, {{name}}!",
+	"button": "Haz clic"
+}

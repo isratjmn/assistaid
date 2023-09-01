@@ -1,7 +1,6 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import Providers from "@/providers";
-import Image from "next/image";
 import React from "react";
 import { Toaster } from "react-hot-toast";
 
