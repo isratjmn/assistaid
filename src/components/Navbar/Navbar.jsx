@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import useAuth from "@/hooks/useAuth";
 import { useTheme } from "next-themes";
 import "./Navbar.css";
-import LanguageSelector from "../LanguageSelector";
 
 const Navbar = () => {
 	// const router = useRouter();
@@ -311,7 +310,7 @@ const Navbar = () => {
 					>
 						Contact Us
 					</Link>
-					<LanguageSelector />
+				
 					{/* Here Night and Light Mood Start */}
 					<div>
 						<div className="flex justify-center">

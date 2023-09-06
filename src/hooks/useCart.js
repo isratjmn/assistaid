@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-
 const useCart = () => {
 	const [cartData, setCartData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-
 	useEffect(() => {
 		getCartData();
 	}, []);
-
 	const getCartData = async () => {
 		let response = await fetch("/api/cartforusers");
 		let data = await response.json();
@@ -15,7 +12,6 @@ const useCart = () => {
 		setCartData(result);
 		setIsLoading(false);
 	};
-
 	if (isLoading) {
 		return (
 			<div className="text-center">
@@ -41,8 +37,6 @@ const useCart = () => {
 			</div>
 		);
 	}
-
 	return cartData;
 };
-
 export default useCart;
