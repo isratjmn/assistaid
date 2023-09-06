@@ -1,14 +1,16 @@
-import React from 'react';
+import React from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import useAuth from "./useAuth";
+import { useRouter } from "next/navigation";
 
 const useAxios = () => {
-    const { logOut } = useAuth();
-	const navigate = useNavigate();
+	const { logOut } = useAuth();
+	const router = useRouter();
+	// const navigate = useNavigate();
 	const axiosSecure = axios.create({
-		baseURL: "http://localhost:3000/",
+		baseURL: "http://localhost:3000",
 	});
 
 	useEffect(() => {
@@ -34,7 +36,7 @@ const useAxios = () => {
 				return Promise.reject(error);
 			}
 		);
-	}, [logOut, navigate, axiosSecure]);
+	}, [logOut, router, axiosSecure]);
 	return [axiosSecure];
 };
 

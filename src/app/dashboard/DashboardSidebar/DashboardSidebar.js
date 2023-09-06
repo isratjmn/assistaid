@@ -13,11 +13,13 @@ import {
 	FaUserAlt,
 } from "react-icons/fa";
 import { RiAccountCircleLine, RiAddBoxFill } from "react-icons/ri";
-import { SiGoogleclassroom } from "react-icons/si";
-import { BiUserPin } from "react-icons/bi";
+
 import { HiHome } from "react-icons/hi";
 import { MdEventAvailable, MdEventNote } from "react-icons/md";
 import { RiDashboard3Line } from "react-icons/ri";
+import { BiSolidDonateHeart } from "react-icons/bi";
+import useAdmin from "@/hooks/useAdmin";
+import useDonor from "@/hooks/useDonor";
 
 const DashboardSidebar = () => {
 	const { user } = useAuth();
@@ -26,6 +28,9 @@ const DashboardSidebar = () => {
 
 	const isAdmin = user?.role === "isAdmin";
 	const isDonor = user?.role === "isDonor";
+
+	/* const [isAdmin] = useAdmin();
+	const [isDonor] = useDonor(); */
 
 	return (
 		<div>
@@ -101,7 +106,7 @@ const DashboardSidebar = () => {
 					{isAdmin ? (
 						<>
 							<ul>
-								<h2 className="font-bold mb-4 bg-neutral/10 py-2 rounded-lg justify-center mx-20 text-sm items-center text-lime-700 flex align-middle gap-2">
+								<h2 className="flex gap-3 ml-3 text-blue-800 font-bold align-middle pb-2 items-center">
 									<FaUserShield className="text-xl" /> Admin
 									Dashboard
 								</h2>
@@ -116,8 +121,8 @@ const DashboardSidebar = () => {
 					) : isDonor ? (
 						<>
 							<ul>
-								<h2 className="font-bold mb-4 bg-neutral/10 py-2 rounded-lg justify-center mx-20 text-sm items-center text-lime-700 flex align-middle gap-2">
-									<RiAccountCircleLine className="text-2xl" />
+								<h2 className="flex gap-3 ml-3 text-blue-800 font-bold align-middle pb-2 items-center">
+									<BiSolidDonateHeart className="text-2xl" />
 									Donor Dashboard
 								</h2>
 								<li className="mb-4">
@@ -138,6 +143,7 @@ const DashboardSidebar = () => {
 									<RiAccountCircleLine className="text-2xl" />
 									User Dashboard
 								</h2>
+
 								<li>
 									<Link
 										href="/dashboard/userCart"
@@ -190,7 +196,6 @@ const DashboardSidebar = () => {
 
 					<ul>
 						<li>
-							
 							<Link
 								href="/"
 								className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
@@ -210,10 +215,8 @@ const DashboardSidebar = () => {
 									Logout
 								</span>
 							</Link>
-
 						</li>
 					</ul>
-
 				</div>
 			</aside>
 		</div>

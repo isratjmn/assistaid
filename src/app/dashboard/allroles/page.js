@@ -1,8 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
-
-import Swal from "sweetalert2";
-import { FaUserShield, FaUsersCog } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 const AllRolesPage = () => {

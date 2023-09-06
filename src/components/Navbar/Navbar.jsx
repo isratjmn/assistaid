@@ -7,10 +7,15 @@ import { useRouter } from "next/navigation";
 import useAuth from "@/hooks/useAuth";
 import { useTheme } from "next-themes";
 import "./Navbar.css";
+import useAdmin from "../../hooks/useAdmin";
+import useDonor from "@/hooks/useDonor";
 
 const Navbar = () => {
 	// const router = useRouter();
 	const { user, logout } = useAuth();
+	const [isAdmin] = useAdmin();
+	const [isDonor] = useDonor();
+
 	const { displayName, photoURL } = user || {};
 	const [activeLink, setActiveLink] = useState(null);
 	// Added Dark Mode
@@ -120,28 +125,58 @@ const Navbar = () => {
 							>
 								<li>
 									<Link
-										href="/dashboard"
+										href={
+											isAdmin
+												? "/dashboard/adminhome"
+												: isDonor
+												? "/dashboard/donorhome"
+												: "/dashboard/userhome"
+										}
 										className="block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
 									>
 										Dashboard
 									</Link>
 								</li>
+								{/* {isAdmin ? (
+									<>
+										<li className="mb-3 dark:text-white pt-6 lg:text-black text-semibold text-base flex gap-3 items-center">
+											<Link href="/dashboard/adminhome">
+												Dashboard
+											</Link>
+										</li>
+									</>
+								) : isDonor ? (
+									<>
+										<li className="mb-4">
+											<Link
+												href="/dashboard/donorhome"
+												className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
+											>
+												dashboard
+											</Link>
+										</li>
+									</>
+								) : (
+									<>
+										<li>
+											<Link
+												href="/dashboard/userhome"
+												className="block px-4 font-bold py-2 text-base text-black hover:bg-gray-100 dark:text-gray-200 dark:hover:text-white"
+											>
+												Dashboard
+											</Link>
+										</li>
+									</>
+								)} */}
 								<li>
 									<Link
 										href="#"
-										className="block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+										className="block px-4 py-2 font-bold text-base text-black hover:bg-gray-100 dark:text-gray-200 dark:hover:text-white"
 									>
 										Settings
 									</Link>
 								</li>
-								<li>
-									<Link
-										href="#"
-										className="block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-									>
-										Earnings
-									</Link>
-								</li>
+
 								<li>
 									<button
 										onClick={handleLogOut}
@@ -262,7 +297,6 @@ const Navbar = () => {
 					>
 						Event
 					</Link>
-					
 
 					<Link
 						href="/howwework"
@@ -310,7 +344,7 @@ const Navbar = () => {
 					>
 						Contact Us
 					</Link>
-				
+
 					{/* Here Night and Light Mood Start */}
 					<div>
 						<div className="flex justify-center">

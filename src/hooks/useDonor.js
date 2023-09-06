@@ -12,7 +12,7 @@ const useDonor = () => {
     useEffect(() => {
         const fetchDonorStatus = async () => {
           try {
-            const response = await axiosSecure.get(`/users/donor/${user?.email}`);
+            const response = await axiosSecure.get(`/api/users/donor/${user?.email}`);
             console.log("Is Donor Response", response);
             setIsDonor(response.data.donor);
             setIsDonorLoading(false);

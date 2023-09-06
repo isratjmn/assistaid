@@ -3,7 +3,6 @@ import User from "@/lib/model2/user";
 
 import { NextResponse } from "next/server";
 import { connectionSrt } from "@/lib/db";
-// import { connectionSrt } from "@/lib/db";
 
 /* export default async function handler(req, res) {
 	try {
@@ -39,16 +38,16 @@ import { connectionSrt } from "@/lib/db";
 	}
 } */
 
-export const GET = async (request, content) => {
+/* export const GET = async (request, content) => {
 	const vol_Id = content.params.email;
 	const findAdata = { email: vol_Id };
 	await mongoose.connect(connectionSrt);
 	const result = await User.findOne(findAdata);
 	return NextResponse.json({ result, success: true });
-};
+}; */
 
 
-/* export const GET = async (request, content) => {
+export const GET = async (request, content) => {
 	try {
 		const volEmail = content.params.email;
 		const findData = { email: volEmail };
@@ -79,4 +78,4 @@ export const GET = async (request, content) => {
 			success: false,
 		});
 	}
-}; */
+};
