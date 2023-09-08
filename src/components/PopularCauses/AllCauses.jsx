@@ -2,7 +2,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { HiOutlineHeart } from "react-icons/hi";
+
 
 const AllCauses = async () => {
 	let data = await fetch("http://localhost:3000/api/causes");
