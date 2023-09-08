@@ -6,7 +6,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import Swal from "sweetalert2";
 
 const AllRolesPage = () => {
-	const { user, logout } = useAuth();
+	const { user } = useAuth();
 	const [users, setUsers] = useState([]);
 
 	const getallusers = async () => {
@@ -45,10 +45,10 @@ const AllRolesPage = () => {
 
 	return (
 		<section>
-			<h2 className="text-3xl font-bold text-center mt-0 md:mt-10 py-10">
+			<h2 className="text-3xl font-bold text-center mt-0 md:mt-10 pt-10 pb-5">
 				Manage Users
 			</h2>
-			<div direction="up" cascade damping={0.3} triggerOnce>
+			<div>
 				<div className="overflow-x-auto mt-8 mx-auto mb-52 md:mb-28 rounded-md">
 					<table className="mx-auto shadow-xl border w-[65%] table-auto bg-white overflow-hidden mb-10 rounded-lg">
 						{/* Head */}
@@ -79,7 +79,7 @@ const AllRolesPage = () => {
 									<td className="px-6 py-4 text-emerald-600 font-semibold">
 										{user.role}
 									</td>
-									
+
 									<button
 										className="rounded bg-red-400 mt-3 px-4 py-2 text-white font-semibold"
 										onClick={handleDeleteUser}

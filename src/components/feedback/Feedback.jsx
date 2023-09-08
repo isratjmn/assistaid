@@ -14,14 +14,12 @@ const Feedback = () => {
 		const feedback = form.feedbackarea.value;
 		const Rating = rating;
 		// console.log(name, email, feedback, Rating);
-
 		const feedbackdata = {
 			name,
 			email,
 			feedback,
 			Rating,
 		};
-
 		let res = await fetch("/api/feedbacks", {
 			method: "Post",
 			body: JSON.stringify(feedbackdata),

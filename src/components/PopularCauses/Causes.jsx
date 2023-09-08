@@ -215,7 +215,7 @@ const Causes = () => {
 								Donation
 								<HiOutlineHeart className="text-xl" />
 							</button>
-							/sincause
+							
 						</Link>
 					</div>
 				</motion.div>

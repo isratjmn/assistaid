@@ -42,6 +42,7 @@
 		"react-scroll": "^1.8.9",
 		"react-spinners": "^0.13.8",
 		"react-text-modifier": "^1.0.0",
+		"recharts": "^2.8.0",
 		"server-only": "^0.0.1",
 		"sweetalert2": "^11.7.27",
 		"swiper": "^10.2.0",

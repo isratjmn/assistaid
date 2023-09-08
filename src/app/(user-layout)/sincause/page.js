@@ -5,13 +5,25 @@ import Image from "next/image";
 import Swal from "sweetalert2";
 
 const CausePage = () => {
-	const [fullName, setFullName] = useState("");
-	const [email, setEmail] = useState("");
-	const [donationAmount, setDonationAmount] = useState("");
-	const [donationCategory, setDonationCategory] = useState("");
+	const [formData, setFormData] = useState({
+		fullName: "",
+		email: "",
+		donationAmount: "",
+		donationCategory: "",
+	});
 
-	const handleSubmit = (e) => {
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setFormData({
+			...formData,
+			[name]: value,
+		});
+	};
+
+	const handleSubmit = async (e) => {
 		e.preventDefault();
+		const { fullName, email, donationCategory, donationAmount } = formData;
+
 		if (!fullName || !email || !donationCategory || !donationAmount) {
 			Swal.fire({
 				icon: "error",
@@ -20,22 +32,40 @@ const CausePage = () => {
 			});
 			return;
 		}
-		console.log("Form submitted:", {
-			fullName,
-			email,
-			donationAmount,
-			donationCategory,
-		});
 
-		Swal.fire({
-			icon: "success",
-			title: "Donation Successfully Done",
-			text: "Thank you for your donation!",
-		});
-		setFullName("");
-		setEmail("");
-		setDonationAmount("");
-		setDonationCategory("");
+		try {
+			const response = await fetch("/api/donation", {
+				method: "POST",
+				body: JSON.stringify(formData),
+			});
+
+			if (response.status === 200) {
+				Swal.fire({
+					icon: "success",
+					title: "Donation Successfully Done",
+					text: "Thank you for your donation!",
+				});
+				setFormData({
+					fullName: "",
+					email: "",
+					donationAmount: "",
+					donationCategory: "",
+				});
+			} else {
+				Swal.fire({
+					icon: "error",
+					title: "Error",
+					text: "An error occurred while processing your donation. Please try again later.",
+				});
+			}
+		} catch (error) {
+			console.error("Error:", error);
+			Swal.fire({
+				icon: "error",
+				title: "Error",
+				text: "An error occurred while processing your donation. Please try again later.",
+			});
+		}
 	};
 
 	return (
@@ -75,10 +105,8 @@ const CausePage = () => {
 											type="text"
 											id="fullName"
 											name="fullName"
-											value={fullName}
-											onChange={(e) =>
-												setFullName(e.target.value)
-											}
+											value={formData.fullName}
+											onChange={handleChange}
 											className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-emerald-600"
 										/>
 									</div>
@@ -93,10 +121,8 @@ const CausePage = () => {
 											type="email"
 											id="email"
 											name="email"
-											value={email}
-											onChange={(e) =>
-												setEmail(e.target.value)
-											}
+											value={formData.email}
+											onChange={handleChange}
 											className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-emerald-600"
 										/>
 									</div>
@@ -110,12 +136,8 @@ const CausePage = () => {
 										<select
 											id="donationCategory"
 											name="donationCategory"
-											value={donationCategory}
-											onChange={(e) =>
-												setDonationCategory(
-													e.target.value
-												)
-											}
+											value={formData.donationCategory}
+											onChange={handleChange}
 											className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-emerald-600"
 										>
 											<option value="">
@@ -129,9 +151,9 @@ const CausePage = () => {
 												Food Supply
 											</option>
 											<option value="education">
-												Education
+												Children Education
 											</option>
-											<option value="custom">
+											<option value="welfare">
 												Womens Rights
 											</option>
 										</select>
@@ -147,12 +169,8 @@ const CausePage = () => {
 											type="number"
 											id="donationAmount"
 											name="donationAmount"
-											value={donationAmount}
-											onChange={(e) =>
-												setDonationAmount(
-													e.target.value
-												)
-											}
+											value={formData.donationAmount}
+											onChange={handleChange}
 											className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-emerald-600"
 										/>
 									</div>
@@ -170,7 +188,7 @@ const CausePage = () => {
 				</div>
 
 				<div className="flex-1 w-1/4">
-					{/* Adjust width here */}
+					{/* Adjust Width Here */}
 					<div className="max-w-sm rounded-lg overflow-hidden shadow-md">
 						<div className="max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
 							<div className="flex items-center justify-between mb-4">

@@ -7,10 +7,8 @@ import React from "react";
 import {
 	FaUserShield,
 	FaIdCardAlt,
-	FaUsers,
 	FaShoppingCart,
 	FaSignOutAlt,
-	FaUserAlt,
 } from "react-icons/fa";
 import { RiAccountCircleLine, RiAddBoxFill } from "react-icons/ri";
 
@@ -25,10 +23,8 @@ const DashboardSidebar = () => {
 	const { user } = useAuth();
 	const { email, photoURL, displayName } = user || {};
 	const cartData = useCart();
-
 	const isAdmin = user?.role === "isAdmin";
 	const isDonor = user?.role === "isDonor";
-
 	/* const [isAdmin] = useAdmin();
 	const [isDonor] = useDonor(); */
 
@@ -125,6 +121,15 @@ const DashboardSidebar = () => {
 									<BiSolidDonateHeart className="text-2xl" />
 									Donor Dashboard
 								</h2>
+								<li className="mb-4">
+									<Link
+										href="/dashboard/donorhistory"
+										className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
+									>
+										<RiAddBoxFill className="text-2xl text-lime-700" />
+										Add Donation
+									</Link>
+								</li>
 								<li className="mb-4">
 									<Link
 										href="/dashboard/addaclass"

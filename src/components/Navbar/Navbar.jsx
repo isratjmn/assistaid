@@ -32,6 +32,7 @@ const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [showSpinner, setShowSpinner] = useState(false);
 	const [navbarTransparent, setNavbarTransparent] = useState(true);
+
 	const toggleDropdown = () => {
 		setShowSpinner(true);
 		setIsOpen(!isOpen);
@@ -130,7 +131,7 @@ const Navbar = () => {
 												? "/dashboard/adminhome"
 												: "/dashboard/donorhome"
 										}
-										className="block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+										className="block px-4 py-2 font-bold text-base text-black hover:bg-gray-100 dark:text-gray-200 dark:hover:text-white"
 									>
 										Dashboard
 									</Link>
