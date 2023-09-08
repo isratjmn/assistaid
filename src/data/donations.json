@@ -1,0 +1,26 @@
+[
+	{
+		"fullName": "John Doe",
+		"email": "gyrujur@mailinator.com",
+		"donationAmount": 100,
+		"donationCategory": "medical"
+	},
+	{
+		"fullName": "Jane Smith",
+		"email": "jiqun@mailinator.com",
+		"donationAmount": 50,
+		"donationCategory": "education"
+	},
+	{
+		"fullName": "Alice Johnson",
+		"email": "lagixo@mailinator.com",
+		"donationAmount": 75,
+		"donationCategory": "food"
+	},
+	{
+		"fullName": "Bob Johnson",
+		"email": "mamavuqib@mailinator.com",
+		"donationAmount": 200,
+		"donationCategory": "zakat"
+	}
+]

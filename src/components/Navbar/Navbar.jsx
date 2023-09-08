@@ -128,9 +128,7 @@ const Navbar = () => {
 										href={
 											isAdmin
 												? "/dashboard/adminhome"
-												: isDonor
-												? "/dashboard/donorhome"
-												: "/dashboard/userhome"
+												: "/dashboard/donorhome"
 										}
 										className="block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
 									>

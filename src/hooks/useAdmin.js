@@ -11,7 +11,7 @@ const useAdmin = () => {
   useEffect(() => {
     const fetchAdminStatus = async () => {
       try {
-        const response = await axiosSecure.get(`/api/users/admin/${user?.email}`);
+        const response = await axiosSecure.get(`/api/users/${user?.email}`);
         console.log("Is Admin Response", response); 
         setIsAdmin(response.data.admin);
         setIsAdminLoading(false);

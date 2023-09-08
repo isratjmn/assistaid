@@ -51,19 +51,15 @@ export const GET = async (request, content) => {
 	try {
 		const volEmail = content.params.email;
 		const findData = { email: volEmail };
-
 		await mongoose.connect(connectionSrt);
 		const user = await User.findOne(findData);
-
 		if (!user) {
 			return NextResponse.json({
 				error: "User not found",
 				success: false,
 			});
 		}
-
 		const isAdmin = user.role === "admin";
-
 		return NextResponse.json({
 			result: {
 				admin: isAdmin,

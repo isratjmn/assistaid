@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-async-client-component */
 "use client";
+import React from "react";
 import CommonBanner from "@/components/CommonBanner/CommonBanner";
-import WorkBanner from "@/components/howworkbanner/WorkBanner";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { HiOutlineHeart } from "react-icons/hi";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { HiOutlineHeart } from "react-icons/hi";
 
 const AllCauses = async () => {
 	let data = await fetch("http://localhost:3000/api/causes");
@@ -20,13 +20,21 @@ const AllCauses = async () => {
 
 export default async function Page() {
 	const causes = await AllCauses();
-	
 
 	return (
 		<section>
-			<CommonBanner PageTittle={"Causes We"} color={"Identify"}></CommonBanner>
-			<div className="flex flex-col md:flex-col items-center md:justify-between max-w-7xl mt-16 mx-auto mb-20">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+			<CommonBanner
+				PageTittle={"Causes We"}
+				color={"Identify"}
+			></CommonBanner>
+			<motion.div
+				initial={{ opacity: 0, y: 15 }}
+				animate={{ opacity: 1, y: 0 }}
+				exit={{ opacity: 0, y: 15 }}
+				transition={{ duration: 0.25 }}
+				className="flex flex-col md:flex-col items-center md:justify-between max-w-7xl mt-16 mx-auto mb-20"
+			>
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{causes.map((cause) => (
 						<div
 							key={cause._id}
@@ -37,12 +45,17 @@ export default async function Page() {
 									src={cause.image}
 									alt={cause.title}
 									width={420}
-									height={300}
+									height={360}
 									className="rounded-t-md"
 								/>
 							</Link>
 							<div className="p-5">
-								<h2 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+								<h2
+									className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+									initial={{ opacity: 0, x: -20 }}
+									animate={{ opacity: 1, x: 0 }}
+									transition={{ duration: 0.5, delay: 0.3 }}
+								>
 									{cause.title}
 								</h2>
 								<h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -75,18 +88,17 @@ export default async function Page() {
 										</span>
 									</div>
 								</div>
-								<button
-									href="#"
-									className="inline-flex items-center px-4 py-3 text-base font-medium text-center text-white bg-emerald-500 hover:bg-emerald-600 gap-2"
-								>
-									Donation
-									<HiOutlineHeart className="text-xl" />
-								</button>
+								<Link href="/sincause">
+									<button className="inline-flex items-center px-4 py-3 text-base font-medium text-center text-white bg-emerald-500 hover:bg-emerald-600 gap-2">
+										Donation
+										<HiOutlineHeart className="text-xl" />
+									</button>
+								</Link>
 							</div>
 						</div>
 					))}
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 }
